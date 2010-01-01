@@ -21,4 +21,9 @@ describe OddEven do
       @oe.process(n)
     end.should == [:even, :odd, :even, :odd, :odd]
   end
+
+  it 'should raise an exception is param is not an integer' do
+    lambda{@oe.process_collection([1, '2', :three])}.should raise_error ArgumentError, 'Argument is not an integer'
+    lambda{@oe.process('1')}.should raise_error ArgumentError, 'Argument is not an integer'
+  end
 end
