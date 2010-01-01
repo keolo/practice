@@ -40,8 +40,7 @@ class ReverseWordOrder
     words.each do |w|
       if w =~ /[.!?]$/
         c = w.chars.to_a
-        c.unshift c[-1]
-        c.pop
+        c = c.values_at(-1, 0..(c.size-2))
         word_list << c.to_s
       else
         word_list << w
