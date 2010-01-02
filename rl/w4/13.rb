@@ -21,6 +21,6 @@ class Quiz
   attr_accessor :attempts
 
   def not_attempted_count(attempts = @attempts)
-    attempts.select{|a| a == 0}.size
+    attempts.count(0)
   end
 end
